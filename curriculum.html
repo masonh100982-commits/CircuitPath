@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><title>100-Lesson Map — CircuitPath</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+    :root{--bg:#070b10;--panel:#0e161f;--line:rgba(101,223,255,.17);--cyan:#65dfff;--lime:#e5ff55;--muted:#9aabb8}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 6%,rgba(24,150,205,.16),transparent 28%),var(--bg);color:#f2f7fa;font-family:Manrope,Arial,sans-serif}.shell{width:min(1140px,calc(100% - 40px));margin:auto}.top{height:75px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}a{color:inherit;text-decoration:none}.brand{font-weight:800;display:flex;align-items:center;gap:10px}.mark{width:29px;height:29px;display:grid;place-items:center;border-radius:7px;background:var(--cyan);color:#061016;font:500 13px 'DM Mono';box-shadow:0 0 20px rgba(101,223,255,.35)}.back{font-size:12px;font-weight:700;color:#b7c3cb}.back:hover{color:var(--cyan)}header{padding:52px 0 27px}.kicker{color:var(--cyan);font:500 10px 'DM Mono';letter-spacing:1px;text-transform:uppercase}h1{font-size:clamp(35px,5vw,58px);letter-spacing:-3px;line-height:1;margin:11px 0}header p{max-width:650px;color:var(--muted);line-height:1.65;font-size:14px;margin:0}.legend{display:flex;gap:17px;align-items:center;color:#aab8c1;font:400 11px 'DM Mono';margin:26px 0}.dot{width:8px;height:8px;border-radius:50%;display:inline-block;margin-right:6px;background:#4e5962}.dot.open{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}.dot.locked{background:#46515a}.map{padding-bottom:55px}.chapter{border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,rgba(17,31,43,.93),rgba(8,14,20,.95));overflow:hidden;margin-bottom:14px}.chapter-head{padding:18px 20px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:15px;align-items:center}.chapter-head h2{font-size:17px;margin:0;letter-spacing:-.5px}.chapter-head span{font:500 10px 'DM Mono';color:var(--cyan);text-transform:uppercase;white-space:nowrap}.lessons{display:grid;grid-template-columns:repeat(2,1fr)}.lesson{min-height:61px;padding:13px 19px;display:flex;align-items:center;gap:12px;border-bottom:1px solid rgba(101,223,255,.09);font-size:13px}.lesson:nth-child(odd){border-right:1px solid rgba(101,223,255,.09)}.badge{min-width:28px;height:25px;border-radius:6px;display:grid;place-items:center;background:#172631;color:#a5b5c0;font:500 10px 'DM Mono'}.lesson.first .badge{background:var(--cyan);color:#071017}.lesson .tag{margin-left:auto;color:#788995;font:400 10px 'DM Mono'}.lesson.first .tag{color:var(--cyan)}@media(max-width:700px){.shell{width:min(100% - 28px,650px)}.lessons{grid-template-columns:1fr}.lesson:nth-child(odd){border-right:0}.chapter-head{align-items:flex-start;flex-direction:column;gap:5px}}
+    a.lesson:hover:not(.locked){background:rgba(101,223,255,.06)}.lesson.locked{cursor:not-allowed;opacity:.58}.lesson.next .badge{background:var(--cyan);color:#071017}.lesson.complete .badge{background:rgba(101,223,255,.18);color:var(--cyan)}.lesson.next .tag,.lesson.complete .tag{color:var(--cyan)}
+  </style>
+  <script>location.replace('index.html#curriculum');</script>
+</head>
+<body>
+  <nav class="shell top"><a class="brand" href="index.html"><span class="mark">&gt;_</span> CircuitPath</a><a class="back" href="dashboard.html">← Back to dashboard</a></nav>
+  <main class="shell"><header><div class="kicker">Complete curriculum</div><h1>100 lessons. One capable robot builder.</h1><p>Start with Python thinking, then carry those skills into the Java tools, hardware, and strategy used in FIRST Tech Challenge. Every lesson has a concrete goal, from your first variable to a competition-ready autonomous.</p></header><div class="legend"><span><i class="dot open"></i>Available now</span><span><i class="dot locked"></i>Unlocks as you progress</span></div><section class="map" id="map"></section></main>
+  <script type="text/plain">
+    const sections=[
+      ['Python foundations',['Boot sequence: what code does','Meet the Python editor','Values: text and numbers','Variables: labeled memory','Strings: words your robot can use','Numbers: speed, distance, and time','Print: inspect what your code knows','Comments: leave a note for your team','User input: let a person choose','Predict the output','Mini build: name your robot','Checkpoint: Python starter badge']],
+      ['Object-oriented Python',['Objects: code with personality','Classes: the blueprint','Attributes: what an object knows','The constructor: first setup','Methods: what an object can do','self: the object in focus','Make your first object','Object state: change a value','Objects working together','Mini build: a virtual drive bot']],
+      ['Functions & modules',['Why functions save time','Define a function','Parameters: flexible inputs','Return values: send an answer back','Local versus global scope','Default values','Write useful docstrings','Modules: organize your code']],
+      ['Logic & iteration',['Comparisons: is it close enough?','True and False','if: make a decision','else: choose a backup plan','elif: more choices','and / or: combine conditions','for loops: repeat a job','while loops: keep checking','range: count with purpose','Nested logic challenge']],
+      ['Lists & dictionaries',['Lists: a queue of values','Indexes: find one item','Slices: take a range','Add and remove items','Loop through a list','Dictionaries: labeled data','Read and update dictionary values','Mini build: pit checklist']],
+      ['Getting ready for FTC',['What FIRST Tech Challenge code controls','Robot safety and motor power','Tour the Robot Controller','Android Studio setup','Hardware configuration mission']],
+      ['OpModes & gamepads',['What an OpMode is','Linear versus iterative OpModes','The start and stop lifecycle','Map a gamepad button','Read joystick axes','Build your first TeleOp','Driver-control challenge']],
+      ['Controlling mechanisms',['Map a DC motor','Motor direction and signs','Power: the 0 to 1 rule','Brake and float behavior','Map a servo','Servo positions and limits','Coordinate two mechanisms','Mechanism safety challenge']],
+      ['Sensors & feedback',['Why robots need feedback','Encoder counts explained','Reset and read encoders','Distance sensor basics','Color sensor basics','IMU orientation','Calibrate and test sensors','Sensor decision challenge']],
+      ['Autonomous programming',['Autonomous planning mindset','Timers and simple moves','Drive by encoder','Turn with feedback','State machines','Build a safe sequence','Add a sensor decision','Debug an autonomous run','Autonomous mission challenge']],
+      ['Road Runner',['What Road Runner solves','Pose: where your robot is','Build a trajectory','Follow a trajectory','Spline paths','Markers and mechanism timing','Road Runner challenge']],
+      ['Common TeleOp programs',['Arcade drive','Tank drive','Field-centric drive','Toggle buttons','Presets and state','TeleOp match challenge']],
+      ['Next steps',['Read a real team codebase','Your robotics coding plan']]
+    ];
+    let lesson=1;const map=document.querySelector('#map');map.innerHTML=sections.map((section,s)=>{const entries=section[1].map((name,i)=>`<div class="lesson ${lesson===1?'first':''}"><span class="badge">${String(lesson++).padStart(3,'0')}</span><span>${name}</span><span class="tag">${s===0&&i===0?'START':'LOCKED'}</span></div>`).join('');return `<article class="chapter"><div class="chapter-head"><h2>${section[0]}</h2><span>${section[1].length} lessons</span></div><div class="lessons">${entries}</div></article>`}).join('');
+  </script>
+  <script src="course-data.js"></script>
+  <script>
+    const PROFILE_KEY='circuitpath-profile-v1',ACCOUNTS_KEY='circuitpath-accounts-v1',SESSION_KEY='circuitpath-session-v1';
+    const session=localStorage.getItem(SESSION_KEY);
+    const accounts=JSON.parse(localStorage.getItem(ACCOUNTS_KEY)||'{}');
+    const profile=session&&accounts[session] ? accounts[session] : JSON.parse(localStorage.getItem(PROFILE_KEY)||'null');
+    if(profile&&!Array.isArray(profile.completedLessons)) profile.completedLessons=Array.from({length:Math.min(Number(profile.completed)||0,100)},(_,index)=>index+1);
+    const completed=[...new Set((profile?.completedLessons||[]).map(Number).filter(number=>number>=1&&number<=100))];
+    const nextLesson=Array.from({length:100},(_,index)=>index+1).find(number=>!completed.includes(number))||100;
+    const map=document.querySelector('#map');
+    map.innerHTML=window.CIRCUITPATH_SECTIONS.map(section=>{
+      const lessons=window.CIRCUITPATH_LESSONS.filter(item=>item.section===section.name);
+      const entries=lessons.map(item=>{
+        const done=completed.includes(item.number),next=item.number===nextLesson,locked=!done&&!next;
+        const state=done?'complete':next?'next':'locked',tag=done?'✓ COMPLETE':next?'START':'LOCKED';
+        const href=locked?'#':`lesson.html?lesson=${item.number}`;
+        return `<a class="lesson ${state}" href="${href}" ${locked?'aria-disabled="true"':''}><span class="badge">${String(item.number).padStart(3,'0')}</span><span>${item.title}</span><span class="tag">${tag}</span></a>`;
+      }).join('');
+      return `<article class="chapter"><div class="chapter-head"><h2>${section.name}</h2><span>${lessons.length} lessons</span></div><div class="lessons">${entries}</div></article>`;
+    }).join('');
+  </script>
+</body>
+</html>
